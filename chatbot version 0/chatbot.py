@@ -36,8 +36,6 @@ def detect_language(text):
     except Exception:
         return "None"
 
-#main programme 
-
 # Create embeddings using OllamaEmbeddings 
 embeddings = OllamaEmbeddings(model="mistral")
 #loading data
