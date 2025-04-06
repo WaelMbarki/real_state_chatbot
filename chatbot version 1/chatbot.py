@@ -39,7 +39,6 @@ def detect_language(text):
         return lang if lang in ["en", "fr", "ar"] else "None"
     except Exception:
         return "None"
-
 #load data
 data = load_data('data.json')
 # Create embeddings using OllamaEmbeddings 
@@ -73,7 +72,7 @@ Answer in clear, professional language:
 
 llm = OllamaLLM(model="mistral", temperature=0.3)
 #retriever
-retriever = vectorstore.as_retriever(search_type="similarity",search_kwargs={"k":2})
+retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k":2})
 chain = (
     {"context":retriever,"question":RunnablePassthrough()}
     | prompt
